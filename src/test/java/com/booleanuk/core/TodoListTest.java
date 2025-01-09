@@ -67,15 +67,16 @@ class TodoListTest {
         TodoList todo = new TodoList();
         Task example = new Task("Example");
         Task example2 = new Task("Example2");
+
         todo.add(example);
         ArrayList<Task> tasks = todo.viewTasks();
         todo.removeTask(example2);
         Assertions.assertEquals(tasks, todo.viewTasks());
 
         todo.add(example2);
-        tasks = todo.viewTasks();
+        int tasks_size = todo.tasks.size();
         todo.removeTask(example2);
-        Assertions.assertNotEquals(todo.viewTasks(), tasks);
+        Assertions.assertNotEquals(todo.tasks.size(), tasks_size);
 
     }
 

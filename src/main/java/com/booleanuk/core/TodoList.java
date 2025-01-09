@@ -49,6 +49,7 @@ public class TodoList {
     }
 
     void removeTask(Task task) {
+        this.tasks.remove(task);
 
     }
 
