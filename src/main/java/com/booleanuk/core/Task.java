@@ -11,5 +11,6 @@ public class Task {
     }
 
     void changeStatus(boolean status) {
+        this.complete = status;
     }
 }
