@@ -48,4 +48,12 @@ public class TodoList {
         return null;
     }
 
+    void removeTask(Task task) {
+
+    }
+
+    ArrayList<Task> alphabeticallyAscView() {
+        return this.tasks;
+    }
+
 }

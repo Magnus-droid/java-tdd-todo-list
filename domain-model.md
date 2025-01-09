@@ -8,7 +8,7 @@
 |                        | ArrayList\<Task> viewTasks()              |                                  | Return entire todo list     |
 |                        | ArrayList\<Task> viewIncompleteTasks()    |                                  | Return incomplete task list |
 |                        | ArrayList\<Task> viewCompleteTasks()      |                                  | Return complete task list   |
-|                        | Task searchTask(String name)              | Task not found                   | Return null + error message |
+|                        | Task searchTask(Task task)                | Task not found                   | Return null + error message |
 |                        |                                           | Task found                       | Return task                 |
 |                        | void removeTask(Task task)                | Task to be removed doesn't exist | Do nothing                  |
 |                        |                                           | Task to be removed exists        | Remove task from todo list  |

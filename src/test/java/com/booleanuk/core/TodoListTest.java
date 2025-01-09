@@ -60,6 +60,38 @@ class TodoListTest {
 
         Assertions.assertEquals(example, todo.searchTask(example));
 
+    }
+
+    @Test
+    public void testRemoveTask() {
+        TodoList todo = new TodoList();
+        Task example = new Task("Example");
+        Task example2 = new Task("Example2");
+        todo.add(example);
+        ArrayList<Task> tasks = todo.viewTasks();
+        todo.removeTask(example2);
+        Assertions.assertEquals(tasks, todo.viewTasks());
+
+        todo.add(example2);
+        tasks = todo.viewTasks();
+        todo.removeTask(example2);
+        Assertions.assertNotEquals(todo.viewTasks(), tasks);
+
+    }
+
+    @Test
+    public void testAscending() {
+        TodoList todo = new TodoList();
+        Task a = new Task("A");
+        Task z = new Task("Zebra");
+        Task f = new Task("Fair");
+
+        todo.add(a);
+        todo.add(f);
+        todo.add(z);
+
+        Assertions.assertEquals(todo.viewTasks(), todo.alphabeticallyAscView());
+
 
     }
 
