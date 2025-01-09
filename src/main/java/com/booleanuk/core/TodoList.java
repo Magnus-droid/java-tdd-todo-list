@@ -2,6 +2,7 @@ package com.booleanuk.core;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class TodoList {
 
@@ -53,8 +54,24 @@ public class TodoList {
 
     }
 
-    ArrayList<Task> alphabeticallyAscView() {
-        return this.tasks;
+    ArrayList<String> alphabeticallyAscView() {
+        ArrayList<String> results = new ArrayList<>();
+        for (int i = 0; i < this.tasks.size(); i++) {
+            results.add(tasks.get(i).name);
+
+        }
+        results.sort(null);
+        return results;
+    }
+
+    ArrayList<String> alphabeticallyDescView() {
+        ArrayList<String> results = new ArrayList<>();
+        for (int i = 0; i < this.tasks.size(); i++) {
+            results.add(tasks.get(i).name);
+
+        }
+        results.sort(Comparator.reverseOrder());
+        return results;
     }
 
 }

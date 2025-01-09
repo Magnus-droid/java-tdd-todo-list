@@ -87,12 +87,31 @@ class TodoListTest {
         Task z = new Task("Zebra");
         Task f = new Task("Fair");
 
-        todo.add(a);
-        todo.add(f);
         todo.add(z);
+        todo.add(f);
+        todo.add(a);
 
-        Assertions.assertEquals(todo.viewTasks(), todo.alphabeticallyAscView());
+        Assertions.assertNotEquals(todo.viewTasks().get(0).name, todo.alphabeticallyAscView().get(0));
+        Assertions.assertEquals(todo.viewTasks().get(1).name, todo.alphabeticallyAscView().get(1));
+        Assertions.assertNotEquals(todo.viewTasks().get(2).name, todo.alphabeticallyAscView().get(2));
 
+    }
+
+
+    @Test
+    public void testDescending() {
+        TodoList todo = new TodoList();
+        Task a = new Task("A");
+        Task z = new Task("Zebra");
+        Task f = new Task("Fair");
+
+        todo.add(z);
+        todo.add(f);
+        todo.add(a);
+
+        Assertions.assertEquals(todo.viewTasks().get(0).name, todo.alphabeticallyDescView().get(0));
+        Assertions.assertEquals(todo.viewTasks().get(1).name, todo.alphabeticallyDescView().get(1));
+        Assertions.assertEquals(todo.viewTasks().get(2).name, todo.alphabeticallyDescView().get(2));
 
     }
 
