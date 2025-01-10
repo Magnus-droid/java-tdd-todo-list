@@ -56,21 +56,23 @@ public class TodoList {
 
     ArrayList<String> alphabeticallyAscView() {
         ArrayList<String> results = new ArrayList<>();
-        for (int i = 0; i < this.tasks.size(); i++) {
-            results.add(tasks.get(i).name);
+        for (Task task : this.tasks) {
+            results.add(task.name);
 
         }
         results.sort(null);
+        //TODO: return a task ArrayList instead of a string ArrayList
         return results;
     }
 
     ArrayList<String> alphabeticallyDescView() {
         ArrayList<String> results = new ArrayList<>();
-        for (int i = 0; i < this.tasks.size(); i++) {
-            results.add(tasks.get(i).name);
+        for (Task task : this.tasks) {
+            results.add(task.name);
 
         }
         results.sort(Comparator.reverseOrder());
+        //TODO: return a task ArrayList instead of a string ArrayList
         return results;
     }
 
