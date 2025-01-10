@@ -61,7 +61,6 @@ public class TodoList {
 
         }
         results.sort(null);
-        //TODO: return a task ArrayList instead of a string ArrayList
         return results;
     }
 
@@ -72,7 +71,6 @@ public class TodoList {
 
         }
         results.sort(Comparator.reverseOrder());
-        //TODO: return a task ArrayList instead of a string ArrayList
         return results;
     }
 
